@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+
+<link rel="stylesheet" href="../static/style.css">
+
+<body>
+
+    <header>
+        <nav class="navbar">
+
+            <h2 class="logo">ExpenseTracker</h2>
+
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/add-expense">Add Expense</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/reports">Reports</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <section class="report-header">
+
+        <h1>Expense Reports</h1>
+
+        <p>Analyze your spending habits.</p>
+
+    </section>
+
+
+    <section class="report-summary">
+
+        <div class="report-card">
+            <h3>Total This Month</h3>
+            <p id="totalThisMonth">₹0</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Highest Category</h3>
+            <p id="highestCategory">None</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Remaining Budget</h3>
+            <p id="remainingBudget">₹0</p>
+        </div>
+
+    </section>
+
+
+    <section class="budget-progress">
+
+        <h2>Budget Usage</h2>
+
+        <div class="progress-bar">
+
+            <div class="progress-fill" id="budgetUsageFill" style="width: 0%;">
+
+                <span id="budgetUsageLabel">0%</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="category-breakdown">
+
+        <h2>Category Breakdown</h2>
+
+        <ul id="categoryBreakdownList">
+            <li>No category data available</li>
+        </ul>
+
+    </section>
+
+
+    <footer>
+
+        <p>© 2026 Expense Tracker</p>
+
+    </footer>
+
+<script src="../static/main.js"></script>
+</body>
+
+</html>

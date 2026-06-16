@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+
+<link rel="stylesheet" href="../static/style.css">
+
+<body>
+
+    <!-- Navbar -->
+
+    <header>
+        <nav class="navbar">
+
+            <h2 class="logo">ExpenseTracker</h2>
+
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/add-expense">Add Expense</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/reports">Reports</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Page Header -->
+
+    <section class="category-header">
+
+        <h1>Manage Categories</h1>
+
+        <p>Create and organize expense categories.</p>
+
+    </section>
+
+
+    <!-- Add Category -->
+
+    <section class="category-input-section">
+
+        <input type="text" id="categoryInput" placeholder="Enter new category">
+
+        <button onclick="addCategory()">
+            Add Category
+        </button>
+
+    </section>
+
+
+    <!-- Category List -->
+
+    <section class="category-list-section">
+
+        <h2>Existing Categories</h2>
+
+        <ul class="category-list" id="categoryList">
+            <!-- Categories will be loaded here by JavaScript -->
+        </ul>
+
+    </section>
+
+
+    <footer>
+
+        <p>© 2026 Expense Tracker</p>
+
+    </footer>
+
+
+<script src="../static/main.js"></script>
+</body>
+
+</html>
