@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
 
-<link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
+
 <body>
-    
+
 
     <!-- Navigation -->
     <header>
@@ -16,16 +17,16 @@
             <h2 class="logo">ExpenseTracker</h2>
 
             <ul class="nav-links">
-               <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/add-expense">Add Expense</a></li>
                 <li><a href="/expenses">Expenses</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/reports">Reports</a></li>
             </ul>
-
-            <a href="/dashboard" class="btn">Get Started</a>
         </nav>
     </header>
+
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -39,10 +40,14 @@
 
             <div class="hero-buttons">
                 <button class="btn">Start Tracking</button>
-                <button class="btn-secondary">Learn More</button>
+                <a href="/dashboard"  class="btn">Get Started</a>
+            </div>
+            <div class="hero-buttons">
+                 <button class="btn-secondary">Learn More</button>
             </div>
         </div>
     </section>
+
 
     <!-- Features -->
     <section id="features" class="features">
@@ -131,7 +136,8 @@
         </div>
     </footer>
 
-<script src="../static/main.js"></script>
+    <script src="../static/main.js"></script>
 
 </body>
+
 </html>
