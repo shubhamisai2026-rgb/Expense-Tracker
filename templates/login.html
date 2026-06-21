@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+</head>
+
+<body class="auth-page">
+
+<div class="auth-container">
+
+    <h1>Login</h1>
+
+    <input
+        type="text"
+        id="username"
+        placeholder="Username">
+
+    <input
+        type="password"
+        id="password"
+        placeholder="Password">
+
+    <div class="login-options">
+
+        <div class="remember-me">
+            <input
+                type="checkbox"
+                id="rememberMe">
+
+            <label for="rememberMe">
+                Remember Me
+            </label>
+        </div>
+
+        <div class="remember-me">
+           <input
+    type="checkbox"
+    onclick="toggleLoginPassword()">
+
+<label>
+    Show Password
+</label>
+        </div>
+
+    </div>
+
+    <button onclick="loginUser()">
+        Login
+    </button>
+
+    <p>
+        <a href="/forgot-password">
+            Forgot Password?
+        </a>
+    </p>
+
+    <p>
+        Don't have an account?
+        <a href="/register">
+            Register
+        </a>
+    </p>
+
+</div>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+<script>
+function toggleLoginPassword()
+{
+    let password =
+        document.getElementById("password");
+
+    if(password.type === "password")
+    {
+        password.type = "text";
+    }
+    else
+    {
+        password.type = "password";
+    }
+}
+</script>
+<div id="customAlert" class="custom-alert">
+    <div class="alert-box">
+        <span id="alertMessage"></span>
+        <br><br>
+        <button onclick="closeAlert()">OK</button>
+    </div>
+</div>
+</body>
+</html>

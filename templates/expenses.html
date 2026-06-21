@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Expenses</title>
 
-<link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
 <body>
 
@@ -18,11 +19,26 @@
             <h2 class="logo">ExpenseTracker</h2>
 
             <ul class="nav-links">
+                <li>
+                    <a href="/profile">
+                        Profile
+                    </a>
+                </li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/add-expense">Add Expense</a></li>
                 <li><a href="/expenses">Expenses</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/reports">Reports</a></li>
+                <li>
+                    <a href="/logout">
+                        Logout
+                    </a>
+                </li>
+                <li>
+                    <button onclick="toggleDarkMode()">
+                        🌙 Dark Mode
+                    </button>
+                </li>
             </ul>
 
         </nav>
@@ -39,7 +55,41 @@
 
     </section>
 
+    <section class="search-section">
 
+        <input type="text" id="searchExpense" placeholder="Search expenses..." onkeyup="searchExpenses()">
+
+    </section>
+    <div class="filter-section">
+
+        <select id="categoryFilter" onchange="filterExpenses()">
+
+            <option value="all">
+                All Categories
+            </option>
+
+        </select>
+        <div class="filter-section">
+
+            <select id="sortExpenses" onchange="sortExpenses()">
+
+                <option value="">
+                    Sort Expenses
+                </option>
+
+                <option value="low">
+                    Amount Low → High
+                </option>
+
+                <option value="high">
+                    Amount High → Low
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
     <!-- Expense Table -->
 
     <section class="expense-table-section">
@@ -77,7 +127,7 @@
 
     </footer>
 
-<script src="../static/main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>

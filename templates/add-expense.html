@@ -5,24 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Expense</title>
-
-<link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
 <body>
-    
+
     <!-- Navbar -->
-     
+
     <header>
         <nav class="navbar">
 
             <h2 class="logo">ExpenseTracker</h2>
 
             <ul class="nav-links">
+                <li>
+                    <a href="/profile">
+                        Profile
+                    </a>
+                </li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/add-expense">Add Expense</a></li>
                 <li><a href="/expenses">Expenses</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/reports">Reports</a></li>
+                <li>
+                    <a href="/logout">
+                        Logout
+                    </a>
+                </li>
+                <li>
+                    <button onclick="toggleDarkMode()">
+                        🌙 Dark Mode
+                    </button>
+                </li>
             </ul>
 
         </nav>
@@ -72,7 +87,8 @@
                     <select id="category" style="flex: 1;">
                         <option value="">Choose Category</option>
                     </select>
-                    <button type="button" onclick="showAddCategoryModal()" style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    <button type="button" onclick="showAddCategoryModal()"
+                        style="padding: 8px 15px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
                         + Add
                     </button>
                 </div>
@@ -117,12 +133,17 @@
 
     <!-- Add Category Modal -->
 
-    <div id="categoryModal" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.4);">
-        <div style="background-color:#fefefe; margin:15% auto; padding:20px; border:1px solid #888; width:300px; border-radius:8px;">
-            <span onclick="closeAddCategoryModal()" style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
+    <div id="categoryModal"
+        style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.4);">
+        <div
+            style="background-color:#fefefe; margin:15% auto; padding:20px; border:1px solid #888; width:300px; border-radius:8px;">
+            <span onclick="closeAddCategoryModal()"
+                style="color:#aaa; float:right; font-size:28px; font-weight:bold; cursor:pointer;">&times;</span>
             <h2>Add New Category</h2>
-            <input type="text" id="newCategoryName" placeholder="Enter category name" style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
-            <button onclick="addCategoryFromModal()" style="width:100%; padding:10px; background-color:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; margin-top:10px;">
+            <input type="text" id="newCategoryName" placeholder="Enter category name"
+                style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ddd; border-radius:4px; box-sizing:border-box;">
+            <button onclick="addCategoryFromModal()"
+                style="width:100%; padding:10px; background-color:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; margin-top:10px;">
                 Add Category
             </button>
         </div>
@@ -136,13 +157,13 @@
     </footer>
 
 
-<script src="../static/main.js"></script>
-<script>
-    // Load categories when the page loads
-    document.addEventListener("DOMContentLoaded", function() {
-        loadCategories();
-    });
-</script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        // Load categories when the page loads
+        document.addEventListener("DOMContentLoaded", function () {
+            loadCategories();
+        });
+    </script>
 </body>
 
 </html>

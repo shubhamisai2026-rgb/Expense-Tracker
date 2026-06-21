@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports</title>
 
-<link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
 
 <body>
 
@@ -16,11 +18,25 @@
             <h2 class="logo">ExpenseTracker</h2>
 
             <ul class="nav-links">
+                <li>
+                    <a href="/profile">
+                        Profile
+                    </a>
+                </li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/add-expense">Add Expense</a></li>
                 <li><a href="/expenses">Expenses</a></li>
                 <li><a href="/categories">Categories</a></li>
                 <li><a href="/reports">Reports</a></li>
+                <li>
+                    <a href="/logout">
+                        Logout
+                    </a>
+                </li>
+                <li>
+                    <button onclick="toggleDarkMode()">
+                        🌙 Dark Mode
+                    </button>
             </ul>
 
         </nav>
@@ -72,7 +88,15 @@
 
     </section>
 
+    <section class="chart-section">
 
+        <h2>Expense Distribution</h2>
+
+        <div class="chart-container">
+            <canvas id="expenseChart"></canvas>
+        </div>
+
+    </section>
     <section class="category-breakdown">
 
         <h2>Category Breakdown</h2>
@@ -82,15 +106,31 @@
         </ul>
 
     </section>
+    <section class="actions-section">
 
+        <button onclick="exportCSV()">
+            Download CSV
+        </button>
+        <button onclick="exportPDF()">
+            Download PDF
+        </button>
+    </section>
+    <section class="chart-section">
 
+        <h2>Monthly Analytics</h2>
+
+        <div class="chart-container">
+            <canvas id="monthlyChart"></canvas>
+        </div>
+
+    </section>
     <footer>
 
         <p>© 2026 Expense Tracker</p>
 
     </footer>
 
-<script src="../static/main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </body>
 
 </html>

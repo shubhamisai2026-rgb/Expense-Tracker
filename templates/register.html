@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Register</title>
+</head>
+<body class="auth-page">
+<div class="auth-container">
+
+    <div class="logo-area">
+
+    <h1>💰 Expense Tracker</h1>
+
+    <p>Create your account</p>
+
+</div>
+
+
+   <input type="text" id="name" placeholder="Full Name">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="tel" id="phone" placeholder="Phone Number">
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="number" id="budget" placeholder="Monthly Budget">
+
+<input type="password" id="password" placeholder="Password">
+
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+<div class="show-password">   
+<input type="checkbox" onclick="togglePassword()">
+<label for="showPassword">show password</label>
+</div>
+<button type="button" onclick="registerUser()">
+    Register
+</button>
+    <p>
+        Already have an account?
+        <a href="/login">Login</a>
+    </p>
+
+</div>
+
+
+ <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

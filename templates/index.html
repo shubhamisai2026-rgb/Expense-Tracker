@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
 
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
 <body>
 
@@ -17,6 +18,11 @@
             <h2 class="logo">ExpenseTracker</h2>
 
             <ul class="nav-links">
+                <li>
+                    <a href="/profile">
+                        Profile
+                    </a>
+                </li>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="/add-expense">Add Expense</a></li>
                 <li><a href="/expenses">Expenses</a></li>
@@ -40,10 +46,10 @@
 
             <div class="hero-buttons">
                 <button class="btn">Start Tracking</button>
-                <a href="/dashboard"  class="btn">Get Started</a>
+                <a href="/dashboard" class="btn">Get Started</a>
             </div>
             <div class="hero-buttons">
-                 <button class="btn-secondary">Learn More</button>
+                <button class="btn-secondary">Learn More</button>
             </div>
         </div>
     </section>
@@ -136,7 +142,7 @@
         </div>
     </footer>
 
-    <script src="../static/main.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 
 </body>
 
